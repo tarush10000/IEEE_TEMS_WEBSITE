@@ -16,7 +16,7 @@ body {
 body{
     color: white;
     background-color:rgb(22, 22, 22);
-    cursor: none;
+    overflow-x: hidden;
  }
   
   /*Home Section CSS*/
@@ -25,11 +25,10 @@ body{
     overflow-x: hidden;
   }
 
-  #homebg{
-    width: 100%;
-    height: 100%;  
-    overflow: hidden;
+  #homebggreen {
+    filter: contrast(3) blur(4px);
   }
+  
 
   #homebg > video{
     width: 100vw;
@@ -123,23 +122,50 @@ body{
     color: white;
   }
 
-  #hlogo{
+  #hlogo {
     position: absolute;
     top: 0;
+    width: 100%;
     left: 0;
     margin: 10px;
-  }
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    z-index: 20; 
+}
 
-  #hlogo > img{
-    width: 12vh;
-  }
+#hlogo > a > img {
+    height: 6vh;
+    width: auto;
+}
 
+#htext{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  margin: 5px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  top: 0px;
+}
+
+#htext > a > p {
+  margin: 0 auto; 
+  font-family: 'Poppins';
+  font-size: 1.25em;
+  font-weight: 120;
+  color: white;
+  text-align: center;
+}
   .hmenu{
     position: fixed;
     top: 1vh;
     right: 1vw;
     margin: 10px;
-    z-index: 15;
+    z-index: 25;
   }
 
   .hmenu > i{
@@ -151,6 +177,10 @@ body{
       height: 100vh;
       width: auto;
     }
+    #homebggreen{
+      right: 0;
+      height: 100vh;
+    }
   }
   @media screen and (min-width: 601px) and (max-width:900px) {
     #htitle{
@@ -161,6 +191,9 @@ body{
       font-size: 1.5em;
       width: 30vw;
       left: 35vw;
+    }
+    #htext > a> p {
+      font-size: 1.2em;
     }
   }
   
@@ -180,17 +213,34 @@ body{
       z-index: 10;
       height: 40vh;
       bottom: 0;
-      top: 88vh;
-      left: 30vw;
+      top: 83vh;
+      left: 27vw;
     }
 
     .hicon{
       font-size: 3.5vh;
-      margin-top: 7.375vh;
+      margin-top: 0vh;
       margin-left: 7.375vw;
     }
-  }
+    #bgimg{
+      width: 100vw;
+      height: 100vh;
+    }
+    .bgvideo{
+      position: absolute;
+      bottom: 20;
+    }  
+    #hlogo > a > img{
+      width : 15vh;
+    }
+    #hlogo{
+      margin-left: 2px
+    }
+    #htext > a >p {
+      font-size: 1em;
+    }
   
+  }
   /* Home CSS End */
 
     /* Sidebar */
@@ -210,6 +260,7 @@ body{
       padding: 15vh 0;
       box-sizing: border-box;
       background-image: linear-gradient(0deg,rgba(113, 112, 112, 0.3),rgba(0, 0, 0, 0.3));
+      backdrop-filter: blur(5px);
       display: flex;
       flex-flow: column nowrap;
       box-shadow: 5px 0px 10px rgba(17, 26, 41, 0.6);
@@ -279,23 +330,13 @@ body{
 
  /*End Sidebar */
 
-  /* Cursor CSS start*/
-  #circle {
-    width: 12px;
-    height: 12px;
-    background-color: white;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999; /* Ensure the circle is on top of other elements */
-    mix-blend-mode: difference;
-    transition: transform 0.1s ease-out;
+
+
+  @media screen and (max-width: 800px) {
+    body{
+      cursor: pointer;
+    }
   }
-  .enlarge {
-    width: 80px;
-    height: 80px;
-  }  
   /* cursor css end */
 
 
@@ -526,6 +567,20 @@ body{
   .blog-section-desktop {
       display: flex; /* Display desktop section */
   }
+}
+.blogs-button{
+  border-radius: 7px; 
+  padding: 5px 10px 5px 10px;
+  background-color:green; 
+  font-size: larger; 
+  font-weight: bold;
+  color:black ;   
+}
+.blogs-button:hover{
+  background-color: white;
+}
+#nextButton:hover,#prevButton:hover{
+  background-color: white;
 }
 /* blog section ends */
 /* contact section starts */
@@ -901,6 +956,11 @@ body{
 #About h1 {
   font-size: 5.5vw;
 }
+#htext > a > p {
+  position: relative;
+  left: 10px;
+  font-weight: bold;
+}
 
 #domain-title {
   font-size: 40px;
@@ -1040,7 +1100,7 @@ section.special header.major h2:after {
 
 .card{
   width: 17vw;
-  height:50vh;
+  height:47vh;
   overflow: hidden;
   background-color: transparent;
   border: none;
@@ -1048,9 +1108,9 @@ section.special header.major h2:after {
 
 .card__1{
   position: relative;
-  width: 17vw;
-  height:33vh;
-  border-radius: 25px;
+  width: 15vw;
+  height:29vh;
+  border-radius: 23px;
   justify-content: center;
   align-content: center;
   display: flex;
@@ -1065,8 +1125,8 @@ section.special header.major h2:after {
 
 .image{
   position: relative;
-  width: 14vw;
-  height: 14vw;
+  width: 12.5vw;
+  height: 12.5vw;
   border-radius: 50%;
   margin: 0 auto;
   transition: all 1s ease;
@@ -1074,8 +1134,8 @@ section.special header.major h2:after {
 }
 
 .card-img{
-  width: 14vw;
-  height: 14vw;
+  width: 12.5vw;
+  height: 12.5vw;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
@@ -1117,7 +1177,7 @@ section.special header.major h2:after {
       opacity: 0.5;
   }
   100%{
-      top: -20%;
+      top: -30%;
   }
 }
 
@@ -1134,12 +1194,12 @@ section.special header.major h2:after {
 /* ************************** Social Icon ************************** */
 
 .social{
-  margin: 10px;
+  margin: 8px;
  
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 17px;
   cursor: pointer;
   opacity: 0;
   animation: anim 0.5s forwards;
@@ -1287,6 +1347,17 @@ section.special header.major h2:after {
   .social .fa-linkedin{
     padding: 0.2rem 0.28rem;
   }
+
+  @keyframes anim{
+    0%{
+        top: 0;
+        opacity: 0.5;
+    }
+    100%{
+        top: -25%;
+    }
+  }
+  
 }
 
 @media screen and (max-width: 400px){
@@ -1347,9 +1418,189 @@ section.special header.major h2:after {
   .social .fa-linkedin{
     padding: 0.3rem 0.38rem;
   }
+
+  @keyframes anim{
+    0%{
+        top: 0;
+        opacity: 0.5;
+    }
+    100%{
+        top: -25%;
+    }
+  }
+  
 }
 
 /* Board CSS ends */
+
+/* Faculty CSS start */
+.container2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  margin-top: 5vh;
+  gap: 6vw;
+  overflow: hidden;
+}
+
+.card2{
+  width: 17vw;
+  height:55vh;
+  background-color: transparent;
+  border: none;
+}
+
+.card__2{
+  position: relative;
+  width: 15vw;
+  height:40vh;
+  border-radius: 23px;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vh;
+  margin-bottom: 0%;
+}
+
+.card-color__2{
+  background: #282B30;
+}
+
+.image2{
+  position: relative;
+  width: 12.5vw;
+  height: 15.67vw;
+  border-radius: 5%;
+  margin: 0 auto;
+  transition: all 1s ease;
+  animation: anim2 1s forwards;
+  padding-bottom: 5px;
+}
+
+.card-img2{
+  width: 12.5vw;
+  height: 15.67vw;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding-bottom: 5px;
+}
+
+.content2{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  transition: all 1s ease;
+  animation: anim2 1s forwards;
+}
+
+@media screen and (min-width: 601px) and (max-width:900px) {
+  .card2{
+    width: 25vw;
+    height:38vh;
+  }
+  
+  .card__2{
+    width: 22vw;
+    height:23vh;
+    padding-left: 0%;
+  }
+
+  .content2{
+    margin: 0;
+  }
+
+  .container2{
+    gap: 0;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+  .container2{
+    flex-direction: column;
+  }
+
+  .image2{
+    width: 30vw;
+    height: 40vw;
+  }
+  
+  .card-img2{
+    width: 30vw;
+    height: 40vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5%;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+  
+
+  .card2{
+    width: 50vw;
+    height:43vh;
+  }
+  
+  .card__2{
+    width: 50vw;
+    height:28vh;
+    padding-left: 0%;
+  }
+
+  .content2{
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 400px){
+  .container2{
+    flex-direction: column;
+  }
+  #htext > a > p {
+    position: relative;
+    left: 20px;
+  }
+
+  .image2{
+    width: 30vw;
+    height: 40vw;
+  }
+  
+  .card-img2{
+    width: 30vw;
+    height: 40vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5%;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+  
+
+  .card2{
+    width: 50vw;
+    height:39vh;
+  }
+  
+  .card__2{
+    width: 50vw;
+    height:25vh;
+    padding-left: 0%;
+  }
+
+  .content2{
+    margin: 0;
+  }
+
+}
+/* Faculty CSS ends */
 
 /* Events CSS start */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -1653,5 +1904,51 @@ section.special header.major h2:after {
   color:rgb(206, 205, 205);
 }
 
+#SW{
+  text-decoration: none;
+  color: white;
+  font-size: larger;
+}
 
 /* Footer CSS ends */
+
+/* Loading Start */
+#changingText2{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-right: 2vw;
+  width: 60%;
+  text-align: center;
+}
+
+#loader{
+  position: absolute;
+  top: 0;
+  display: block;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4000;
+  justify-content: center;
+}
+
+#loop{
+  margin-top: 20vh;
+  height: 50vh;
+  width: auto;
+}
+
+#loader p{
+  text-align: center;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 100;
+  width: 100%;
+  height: 10vh;
+  padding-top: 0;
+}
+/* Loading End */
